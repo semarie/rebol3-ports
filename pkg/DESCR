@@ -1,0 +1,11 @@
+Rebol is a highly versatile, multiplatform scripting language for
+Lightweight Distributed Computing created by Carl Sassenrath.
+Originally, REBOL was an acronym Relative Expression-Based Object
+Language.
+
+It was designed with the aim of being a human-centric, network-based
+messaging language. It is a first class functional scripting language
+with automatic memory management, higher order functions, exception
+handling, and dialecting. It includes many built-in functions that
+allow you to work with math, text, files, networking, graphics and
+multimedia.

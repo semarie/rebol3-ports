@@ -1,0 +1,53 @@
+$OpenBSD$
+- don't strip executable
+- remove misleading vendor
+- use rpath (for bootstrap)
+- build with debug symbols
+
+Index: make/rebol3.nest
+--- make/rebol3.nest.orig
++++ make/rebol3.nest
+@@ -7,7 +7,7 @@ name:     %Rebol
+ group:    %rebol
+ product:  Base    ; default product.. the others are by include: Core or Bulk
+ 
+-strip:    on
++strip:    off
+ 
+ root:     %../
+ source:   %src/
+@@ -43,7 +43,6 @@ target-openbsd: [
+ 	os:       openbsd
+ 	sys:      openbsd
+ 	platform: OpenBSD
+-	vendor:   pc
+ 	compiler: clang
+ ]
+ 
+@@ -689,6 +688,10 @@ common: [
+ 	#if (any [Linux? OpenBSD? FreeBSD?]) [
+ 		library: %m
+ 		defines: ENDIAN_LITTLE
++                lflag: [
++                        "-Wl,-z,origin"
++                        "-Wl,--rpath=\$ORIGIN/../lib"
++                ]
+ 	]
+ ]
+ 
+@@ -725,6 +728,7 @@ arch-x64: [
+ 	] 
+ 	#if OpenBSD? [
+ 		defines: TO_OPENBSD
++		flags: [ "-g" ]
+ 	]
+ 	#if FreeBSD? [
+ 		defines: TO_FREEBSD
+@@ -742,6 +746,7 @@ arch-x86: [
+ 	]
+ 	#if OpenBSD? [
+ 		defines: TO_OPENBSD
++		flags: [ "-g" ]
+ 	]
+ 	#if FreeBSD? [
+ 		defines: TO_FREEBSD
