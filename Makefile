@@ -68,6 +68,9 @@ REBOL3_BIN =	exec ${SETENV} ${MAKE_ENV} \
 		${WRKDIR}/${BOOTSTRAP_DIR-${MACHINE_ARCH}}/bin/rebol3
 SISKIN_R3 =	${WRKDIR}/Builder-${SISKIN_V}/siskin.r3
 
+TEST_ENV +=	HOME=${WRKBUILD} \
+		CI=true
+
 do-build:
 	cd ${WRKBUILD} && ${REBOL3_BIN} \
 		${SISKIN_R3} make/rebol3.nest \
@@ -89,8 +92,7 @@ do-install:
 		${PREFIX}/include/rebol3/poly1305
 
 do-test:
-	cd ${WRKSRC} && exec ${SETENV} ${MAKE_ENV} \
-		HOME=${WRKBUILD} \
+	cd ${WRKSRC} && exec ${SETENV} ${MAKE_ENV} ${TEST_ENV} \
 		${WRKBUILD}/build/rebol3-bulk-${ALL_TARGET} \
 		-s ./src/tests/run-tests.r3
 
