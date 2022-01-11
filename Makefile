@@ -1,17 +1,18 @@
 # $OpenBSD$
 
 # Need a rebol3 binary to bootstrap the build
-ONLY_FOR_ARCHS =	amd64
+ONLY_FOR_ARCHS =	amd64 i386
 
 COMMENT =	oldes branch of rebol3 interpreter
 
-DISTNAME =	Rebol3-3.7.2pl4
-PKGNAME =	rebol3-3.7.2pl4
-V =		e7f2b61182784df2b03d1205900cd786205adf7c
+DISTNAME =	Rebol3-3.7.2pl5
+PKGNAME =	rebol3-3.7.2pl5
+V =		a6a51e0da3a3a9196f5c9453c9540d00e4bfb151
 
 SISKIN_V =	0.7.2
 
 BV-amd64 =	3.7.2-20220106
+BV-i386 =	3.7.2-20220111
 BV =		${BV-${MACHINE_ARCH}}
 
 CATEGORIES =	lang
@@ -52,6 +53,7 @@ DISTFILES +=		${BOOTSTRAP-${MACHINE_ARCH}}
 
 # which target to build
 ALL_TARGET-amd64 =	openbsd-x64
+ALL_TARGET-i386 =	openbsd-x86
 ALL_TARGET =		${ALL_TARGET-${MACHINE_ARCH}}
 
 LIB_DEPENDS =		converters/libiconv
