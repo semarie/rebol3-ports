@@ -99,7 +99,7 @@ do-test:
 		-s ./src/tests/run-tests.r3
 
 BOOTSTRAPDIR=${WRKDIR}/rebol3-${V}-YYYYMMDD-${MACHINE_ARCH}
-bootstrap:
+bootstrap: patch
 	${_PBUILD} rm -rf -- ${BOOTSTRAPDIR}
 	${_PBUILD} mkdir -p ${BOOTSTRAPDIR}/{bin,lib}
 	${_PBUILD} cd ${WRKBUILD} && ${REBOL3_BIN} \
