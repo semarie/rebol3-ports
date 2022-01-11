@@ -5,9 +5,9 @@ ONLY_FOR_ARCHS =	amd64 i386
 
 COMMENT =	oldes branch of rebol3 interpreter
 
-DISTNAME =	Rebol3-3.7.2pl5
-PKGNAME =	rebol3-3.7.2pl5
-V =		a6a51e0da3a3a9196f5c9453c9540d00e4bfb151
+DISTNAME =	Rebol3-3.7.2pl6
+PKGNAME =	rebol3-3.7.2pl6
+V =		34641263cb872fa3b86b2d1a48ec84bb8b8d9de0
 
 SISKIN_V =	0.7.2
 
