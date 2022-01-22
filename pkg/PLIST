@@ -23,6 +23,7 @@ include/rebol3/host-ext-window.h
 include/rebol3/host-init.h
 include/rebol3/host-lib.h
 include/rebol3/mbedtls/
+include/rebol3/mbedtls/build_info.h
 include/rebol3/mbedtls/check_config.h
 include/rebol3/mbedtls/config.h
 include/rebol3/mbedtls/error.h
@@ -31,6 +32,7 @@ include/rebol3/mbedtls/md5.h
 include/rebol3/mbedtls/platform.h
 include/rebol3/mbedtls/platform_time.h
 include/rebol3/mbedtls/platform_util.h
+include/rebol3/mbedtls/private_access.h
 include/rebol3/mbedtls/ripemd160.h
 include/rebol3/mbedtls/sha1.h
 include/rebol3/mbedtls/sha256.h
