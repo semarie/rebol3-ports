@@ -1,5 +1,3 @@
-# $OpenBSD$
-
 # Need a rebol3 binary to bootstrap the build
 ONLY_FOR_ARCHS =	amd64 i386
 
